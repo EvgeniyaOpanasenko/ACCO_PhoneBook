@@ -18,7 +18,7 @@ import java.util.Date;
 /**
  * Created by Lisa on 12/12/2016.
  */
-public class JTableContacts extends JFrame {
+public class StartFrameJTableContacts extends JFrame {
 
     private ArrayList<Contact> contacts;
     private JTableContactModel tableContactsModel;
@@ -34,7 +34,7 @@ public class JTableContacts extends JFrame {
 
     private JComboBox sortType = new JComboBox (sortStrings);
 
-    public JTableContacts() throws InvalidNameSurnameException {
+    public StartFrameJTableContacts() throws InvalidNameSurnameException {
 
         contacts = new ArrayList<>();
         contacts.add(new Contact("Eva", "Eva",
