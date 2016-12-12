@@ -1,0 +1,21 @@
+[
+  null,
+  {
+    "name": "Eva",
+    "surname": "Eva",
+    "address": "Kiev",
+    "skype": "skype",
+    "mail": "mail",
+    "phone": "1234comboBoxChanged",
+    "group": "groupcomboBoxChanged"
+  },
+  {
+    "name": "Eva",
+    "surname": "Eva",
+    "address": "Kiev",
+    "skype": "skype",
+    "mail": "mail",
+    "phone": "1234comboBoxChanged",
+    "group": "groupcomboBoxChanged"
+  }
+]
