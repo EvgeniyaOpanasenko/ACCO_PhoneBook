@@ -4,6 +4,7 @@ import ua.artcode.model.Contact;
 import ua.artcode.utils.FileSaver;
 import ua.artcode.view.AddContactFrameTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,8 @@ public class ContactDao implements IContactDao {
 
     public ContactDao(FileSaver fileSaver) {
         this.fileSaver = fileSaver;
+        this.contacts = new ArrayList<>();
+        //contacts = fileSaver.read();
 
     }
 
@@ -31,6 +34,7 @@ public class ContactDao implements IContactDao {
 
     @Override
     public List<Contact> getAllContacts() {
+        contacts = new ArrayList<>();
         return contacts = fileSaver.read();
     }
 

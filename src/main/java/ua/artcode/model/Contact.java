@@ -17,7 +17,9 @@ public class Contact {
     private String skype;
     private String mail;
     private String phone;
+    private String phone_type;
     private String group;
+    private String group_type;
    /* private Phone phone;
     private Group group;
     private Date dateOfCreation;
@@ -25,14 +27,18 @@ public class Contact {
 
 
     public Contact(String name, String surname,
-                   String address, String skype, String mail, String phone, String group) throws InvalidNameSurnameException {
+                   String address, String skype, String mail,
+                   String phone, String phone_type, String group,
+                   String group_type ) throws InvalidNameSurnameException {
         this.name = name;
         this.surname = surname;
         this.address = address;
         this.skype = skype;
         this.mail = mail;
         this.phone = phone;
+        this.phone_type = phone_type;
         this.group = group;
+        this.group_type = group_type;
 
         validateName(name);
         validateSurname(surname);
@@ -66,4 +72,11 @@ public class Contact {
         return group;
     }
 
+    public String getPhone_type() {
+        return phone_type;
+    }
+
+    public String getGroup_type() {
+        return group_type;
+    }
 }

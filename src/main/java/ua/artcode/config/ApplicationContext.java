@@ -27,8 +27,8 @@ public class ApplicationContext {
     public ApplicationContext() {
         this.fileSaver = new FileSaver(path);
         this.dao = new ContactDao(fileSaver);
-        this.addContactFrame = new AddContactFrameTest();
-        this.controller = new ContactController(addContactFrame, dao);
+        this.startFrame = new StartFrameJTableContacts();
+        this.controller = new ContactController(startFrame, dao);
     }
 
     public ContactController getController() {

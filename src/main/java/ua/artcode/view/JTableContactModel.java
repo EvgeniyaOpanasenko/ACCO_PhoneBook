@@ -1,5 +1,6 @@
 package ua.artcode.view;
 
+import ua.artcode.dao.IContactDao;
 import ua.artcode.model.Contact;
 
 import javax.swing.table.AbstractTableModel;
@@ -10,6 +11,7 @@ import java.util.List;
  */
 public class JTableContactModel extends AbstractTableModel {
     private List<Contact> contacts;
+    private IContactDao dao;
 
     public JTableContactModel(List<Contact> contacts) {
         super();
@@ -23,11 +25,15 @@ public class JTableContactModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 7;
+        return 9;
     }
 
+    //setting dte to ech cell
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        Contact entity = null;
+        entity = contacts.get(rowIndex);
+
         switch (columnIndex) {
             case 0:
                 return contacts.get(rowIndex).getName();
@@ -38,11 +44,15 @@ public class JTableContactModel extends AbstractTableModel {
             case 3:
                 return contacts.get(rowIndex).getGroup();
             case 4:
-                return contacts.get(rowIndex).getSkype();
+                return contacts.get(rowIndex).getGroup_type();
             case 5:
-                return contacts.get(rowIndex).getMail();
+                return contacts.get(rowIndex).getSkype();
             case 6:
+                return contacts.get(rowIndex).getMail();
+            case 7:
                 return contacts.get(rowIndex).getPhone();
+            case 8:
+                return contacts.get(rowIndex).getPhone_type();
 
             default:
                 return "";
@@ -67,13 +77,19 @@ public class JTableContactModel extends AbstractTableModel {
                 res = "Group";
                 break;
             case 4:
-                res = "Skype";
+                res = "Group type";
                 break;
             case 5:
-                res = "Mail";
+                res = "Skype";
                 break;
             case 6:
-                res = "Phone Number";
+                res = "Mail";
+                break;
+            case 7:
+                res = "Number";
+                break;
+            case 8:
+                res = "Phone type";
                 break;
         }
         return res;

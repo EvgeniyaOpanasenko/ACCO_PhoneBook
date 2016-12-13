@@ -37,13 +37,17 @@ public class AddContactFrameTest extends JFrame {
     private JComboBox phone_type = new JComboBox(phoneLabels);
     private JComboBox group_type = new JComboBox(groupLabels);
 
+    private JTextField result_phone_type = new JTextField(15);
+    private JTextArea result_gruop_type = new JTextArea();
 
     public AddContactFrameTest() {
 
         phone_type.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String  phone = phone_type.getActionCommand();
+                JComboBox combox = (JComboBox)e.getSource();
+                String choice = (String)combox.getSelectedItem();
+                result_phone_type.setText(String.valueOf(choice));
 
             }
         });
@@ -51,12 +55,14 @@ public class AddContactFrameTest extends JFrame {
         group_type.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String group = group_type.getSelectedItem().toString();
-
+                JComboBox combox = (JComboBox)e.getSource();
+                String choice = (String)combox.getSelectedItem();
+                result_gruop_type.setText(String.valueOf(choice));
             }
         });
 
-        setTitle("Contacts");
+
+        setTitle("Add contacts");
         setResizable(false);
         setLayout(new GridBagLayout());
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -68,7 +74,7 @@ public class AddContactFrameTest extends JFrame {
 
         constraints.fill = GridBagConstraints.BOTH;
 
-        //addNewPhoneButton.addActionListener(e -> new AddPhoneNumberFrame());
+        addNewPhoneButton.addActionListener(e -> new AddPhoneNumberFrame());
 
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -118,9 +124,9 @@ public class AddContactFrameTest extends JFrame {
         constraints.gridx = 2;
         add(phone_type, constraints);
 
-       /* constraints.gridx = 0;
+        constraints.gridx = 0;
         constraints.gridy = 10;
-        add(addNewPhoneButton, constraints);*/
+        add(addNewPhoneButton, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 11;
@@ -129,7 +135,23 @@ public class AddContactFrameTest extends JFrame {
         add(cancelButton, constraints);
 
         pack();
-        //setVisible(true);
+        setVisible(true);
+    }
+
+    public JTextField getResult_phone_type() {
+        return result_phone_type;
+    }
+
+    public void setResult_phone_type(JTextField result_phone_type) {
+        this.result_phone_type = result_phone_type;
+    }
+
+    public JTextArea getResult_gruop_type() {
+        return result_gruop_type;
+    }
+
+    public void setResult_gruop_type(JTextArea result_gruop_type) {
+        this.result_gruop_type = result_gruop_type;
     }
 
     public String[] getPhoneLabels() {
