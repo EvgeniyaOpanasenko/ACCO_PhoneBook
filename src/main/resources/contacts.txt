@@ -1,5 +1,4 @@
 [
-
   {
     "name": "Eva",
     "surname": "Eva",
@@ -12,25 +11,69 @@
     "group_type": "PROF"
   },
   {
-      "name": "Eva",
-      "surname": "Eva",
-      "address": "Kiev",
-      "skype": "skype",
-      "mail": "mail",
-      "phone": "1234",
-      "phone_type": "WORK_PHONE",
-      "group": "asd12",
-      "group_type": "PROF"
-    },
-    {
-        "name": "Eva",
-        "surname": "Eva",
-        "address": "Kiev",
-        "skype": "skype",
-        "mail": "mail",
-        "phone": "1234",
-        "phone_type": "WORK_PHONE",
-        "group": "asd12",
-        "group_type": "PROF"
-      }
+    "name": "Eva",
+    "surname": "Eva",
+    "address": "Kiev",
+    "skype": "skype",
+    "mail": "mail",
+    "phone": "1234",
+    "phone_type": "WORK_PHONE",
+    "group": "asd12",
+    "group_type": "PROF"
+  },
+  {
+    "name": "Eva",
+    "surname": "Eva",
+    "address": "Kiev",
+    "skype": "skype",
+    "mail": "mail",
+    "phone": "1234",
+    "phone_type": "WORK_PHONE",
+    "group": "asd12",
+    "group_type": "PROF"
+  },
+  {
+    "name": "Olga",
+    "surname": "Evgeniya",
+    "address": "Lviv",
+    "skype": "olga.skype",
+    "mail": "olya@mail.ru",
+    "phone": "34562",
+    "phone_type": "CELL_PHONE",
+    "group": "Acco12",
+    "group_type": "BASE"
+  },
+  {
+    "name": "Nataliya",
+    "surname": "Nataliya",
+    "address": "Kiev",
+    "skype": "skype",
+    "mail": "mail",
+    "phone": "743q",
+    "phone_type": "",
+    "group": "ACCO12",
+    "group_type": "PROF"
+  },
+  {
+    "name": "Viktor",
+    "surname": "Viktory",
+    "address": "Kiev",
+    "skype": "skype",
+    "mail": "mail",
+    "phone": "1234567890",
+    "phone_type": "",
+    "group": "Acco15",
+    "group_type": ""
+  },
+  {
+    "name": "Ali",
+    "surname": "Ali",
+    "address": "Ali",
+    "skype": "Ali",
+    "mail": "Ali",
+    "phone": "1234",
+    "phone_type": "",
+    "group": "fg",
+    "group_type": ""
+  }
 ]

@@ -1,5 +1,6 @@
 package ua.artcode.view;
 
+import ua.artcode.dao.ContactDao;
 import ua.artcode.dao.IContactDao;
 import ua.artcode.model.Contact;
 
@@ -11,11 +12,11 @@ import java.util.List;
  */
 public class JTableContactModel extends AbstractTableModel {
     private List<Contact> contacts;
-    private IContactDao dao;
 
     public JTableContactModel(List<Contact> contacts) {
         super();
         this.contacts = contacts;
+
     }
 
     @Override
@@ -28,11 +29,11 @@ public class JTableContactModel extends AbstractTableModel {
         return 9;
     }
 
-    //setting dte to ech cell
+    //setting data to ech cell
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Contact entity = null;
-        entity = contacts.get(rowIndex);
+       /* Contact entity = null;
+        entity = contacts.get(rowIndex);*/
 
         switch (columnIndex) {
             case 0:

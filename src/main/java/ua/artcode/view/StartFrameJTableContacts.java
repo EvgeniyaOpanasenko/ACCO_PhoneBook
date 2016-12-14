@@ -21,7 +21,7 @@ public class StartFrameJTableContacts extends JFrame {
     private JTableContactModel tableContactsModel;
     private IContactDao dao;
     private String path = "D:\\ACCO_PhoneBook\\src\\main\\resources\\contacts.txt";
-    FileSaver fileReader;
+    private FileSaver fileReader;
 
     private JScrollPane scrollPaneTable;
     private JScrollPane scrollPaneButtons;
@@ -30,6 +30,7 @@ public class StartFrameJTableContacts extends JFrame {
     private JButton addContactButton = new JButton("add new contact");
     private JButton findContactButton = new JButton("find contact");
     private JButton sortButton = new JButton("sort");
+    private JButton updateButton = new JButton("update");
     //private JButton cancelButton = new JButton("cancel");
     String[] sortStrings = {"By Name", "By Surname", "By Phone"};
 
@@ -44,7 +45,7 @@ public class StartFrameJTableContacts extends JFrame {
                  "Kie", "slype", "mail",
                  "1234567890", "cellPhone",
                  "acco12", "OOP"));*/
-        
+
         contacts = dao.getAllContacts();
 
         setTitle("Contacts");
@@ -65,23 +66,29 @@ public class StartFrameJTableContacts extends JFrame {
 
         constraints.fill = GridBagConstraints.BOTH;
 
-        addContactButton.addActionListener(e -> new AddContactFrameTest());
-        //addContactButton.addActionListener(e -> new AddContactFrame());
-        findContactButton.addActionListener(e -> new FindContactFrame());
-
-
-        sortType = new JComboBox(sortStrings);
-
-        JButton btnPress = new JButton("update");
-        btnPress.addActionListener(new ActionListener() {
+        /*updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                /*contacts.add(new Contact("Vasya", "Pupkin",
+                *//*contacts.add(new Contact("Vasya", "Pupkin",
+                "Kie", "slype",
+                        "mail", "1234567890", "Acco12" ));*//*
+                tableContactsModel.fireTableDataChanged();
+            }*/
+/*
+       *//* addContactButton.addActionListener(e -> new AddContactFrameTest());
+        //addContactButton.addActionListener(e -> new AddContactFrame());
+        findContactButton.addActionListener(e -> new FindContactFrame());*//*
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                *//*contacts.add(new Contact("Vasya", "Pupkin",
                         "Kie", "slype",
-                        "mail", "1234567890", "Acco12" ));*/
+                        "mail", "1234567890", "Acco12" ));*//*
                 tableContactsModel.fireTableDataChanged();
             }
-        });
+        });*/
+
+        sortType = new JComboBox(sortStrings);
 
         JPanel buttonPanel = new JPanel();
         constraints.gridx = 0;
@@ -94,7 +101,7 @@ public class StartFrameJTableContacts extends JFrame {
 
         constraints.gridx = 0;
         constraints.gridy = 2;
-        buttonPanel.add(btnPress, constraints);
+        buttonPanel.add(updateButton, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 3;
@@ -112,6 +119,14 @@ public class StartFrameJTableContacts extends JFrame {
 
         //Отображаем контейнер
         //setVisible(true);
+    }
+
+    public JButton getUpdateButton() {
+        return updateButton;
+    }
+
+    public void setUpdateButton(JButton updateButton) {
+        this.updateButton = updateButton;
     }
 
     public ArrayList<Contact> getContacts() {

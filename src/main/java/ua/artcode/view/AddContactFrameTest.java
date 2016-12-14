@@ -62,7 +62,7 @@ public class AddContactFrameTest extends JFrame {
         });
 
 
-        setTitle("Add contacts");
+        setTitle("Add contacts TEST");
         setResizable(false);
         setLayout(new GridBagLayout());
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
