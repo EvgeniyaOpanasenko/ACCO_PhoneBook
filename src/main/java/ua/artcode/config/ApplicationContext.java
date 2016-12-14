@@ -31,6 +31,7 @@ public class ApplicationContext {
         this.controller = new ContactController(startFrame, dao);
     }
 
+
     public ContactController getController() {
         return controller;
     }

@@ -1,8 +1,10 @@
 package ua.artcode.view;
 
-
+import ua.artcode.dao.ContactDao;
+import ua.artcode.dao.IContactDao;
 import ua.artcode.exceptions.InvalidNameSurnameException;
 import ua.artcode.model.Contact;
+import ua.artcode.utils.FileSaver;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,8 +17,12 @@ import java.util.ArrayList;
  */
 public class StartFrameJTableContacts extends JFrame {
 
-    private ArrayList<Contact> contacts;
+    private ArrayList<Contact> contacts;// почему не могу создать List???
     private JTableContactModel tableContactsModel;
+    private IContactDao dao;
+    private String path = "D:\\ACCO_PhoneBook\\src\\main\\resources\\contacts.txt";
+    FileSaver fileReader;
+
     private JScrollPane scrollPaneTable;
     private JScrollPane scrollPaneButtons;
     private JTable jTableContacts;
@@ -27,19 +33,19 @@ public class StartFrameJTableContacts extends JFrame {
     //private JButton cancelButton = new JButton("cancel");
     String[] sortStrings = {"By Name", "By Surname", "By Phone"};
 
-    private JComboBox sortType = new JComboBox (sortStrings);
+    private JComboBox sortType = new JComboBox(sortStrings);
 
-    public StartFrameJTableContacts()  {
-
+    public StartFrameJTableContacts() {
         contacts = new ArrayList<>();
-        try {
-            contacts.add(new Contact("Eva", "Eva",
-                    "Kie", "slype", "mail",
-                    "1234567890", "cellPhone",
-                    "acco12", "OOP" ));
-        } catch (InvalidNameSurnameException e) {
-            e.printStackTrace();
-        }
+        fileReader = new FileSaver(path);
+        dao = new ContactDao(fileReader);
+
+        /* contacts.add(new Contact("Eva", "Eva",
+                 "Kie", "slype", "mail",
+                 "1234567890", "cellPhone",
+                 "acco12", "OOP"));*/
+        
+        contacts = dao.getAllContacts();
 
         setTitle("Contacts");
         //setResizable(false);

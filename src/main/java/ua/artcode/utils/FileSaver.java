@@ -22,11 +22,10 @@ public class FileSaver {
         this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
-    public List<Contact> read() {
+    public ArrayList<Contact> read() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
-
-            List<Contact> users = gson.fromJson(br, new TypeToken<List<Contact>>() {
+            ArrayList<Contact> users = gson.fromJson(br, new TypeToken<List<Contact>>() {
             }.getType());
 
             if(users == null){
@@ -43,7 +42,7 @@ public class FileSaver {
 
     }
 
-    public void save(List<Contact> users) {
+    public void save(ArrayList<Contact> users) {
 
         String json = gson.toJson(users);
         try (FileWriter writer = new FileWriter(path)) {
