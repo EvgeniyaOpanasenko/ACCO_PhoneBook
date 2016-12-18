@@ -61,7 +61,6 @@ public class AddContactFrameTest extends JFrame {
             }
         });
 
-
         setTitle("Add contacts TEST");
         setResizable(false);
         setLayout(new GridBagLayout());
@@ -74,7 +73,7 @@ public class AddContactFrameTest extends JFrame {
 
         constraints.fill = GridBagConstraints.BOTH;
 
-        addNewPhoneButton.addActionListener(e -> new AddPhoneNumberFrame());
+        //addNewPhoneButton.addActionListener(e -> new AddPhoneNumberFrame());
 
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -142,40 +141,8 @@ public class AddContactFrameTest extends JFrame {
         return result_phone_type;
     }
 
-    public void setResult_phone_type(JTextField result_phone_type) {
-        this.result_phone_type = result_phone_type;
-    }
-
     public JTextArea getResult_gruop_type() {
         return result_gruop_type;
-    }
-
-    public void setResult_gruop_type(JTextArea result_gruop_type) {
-        this.result_gruop_type = result_gruop_type;
-    }
-
-    public String[] getPhoneLabels() {
-        return phoneLabels;
-    }
-
-    public String[] getGroupLabels() {
-        return groupLabels;
-    }
-
-    public JComboBox getPhone_type() {
-        return phone_type;
-    }
-
-    public void setPhone_type(JComboBox phone_type) {
-        this.phone_type = phone_type;
-    }
-
-    public JComboBox getGroup_type() {
-        return group_type;
-    }
-
-    public void setGroup_type(JComboBox group_type) {
-        this.group_type = group_type;
     }
 
     public JTextField getContactName() {
@@ -190,72 +157,36 @@ public class AddContactFrameTest extends JFrame {
         return surname;
     }
 
-    public void setSurname(JTextField surname) {
-        this.surname = surname;
-    }
-
     public JTextField getAddress() {
         return address;
-    }
-
-    public void setAddress(JTextField address) {
-        this.address = address;
     }
 
     public JTextField getGroup() {
         return group;
     }
 
-    public void setGroup(JTextField group) {
-        this.group = group;
-    }
-
     public JTextField getPhone() {
         return phone;
-    }
-
-    public void setPhone(JTextField phone) {
-        this.phone = phone;
     }
 
     public JTextField getSkype() {
         return skype;
     }
 
-    public void setSkype(JTextField skype) {
-        this.skype = skype;
-    }
-
     public JTextField getMail() {
         return mail;
-    }
-
-    public void setMail(JTextField mail) {
-        this.mail = mail;
-    }
-
-    public JButton getAddNewPhoneButton() {
-        return addNewPhoneButton;
-    }
-
-    public void setAddNewPhoneButton(JButton addNewPhoneButton) {
-        this.addNewPhoneButton = addNewPhoneButton;
     }
 
     public JButton getOkButton() {
         return okButton;
     }
 
-    public void setOkButton(JButton okButton) {
-        this.okButton = okButton;
-    }
-
     public JButton getCancelButton() {
         return cancelButton;
     }
 
-    public void setCancelButton(JButton cancelButton) {
-        this.cancelButton = cancelButton;
+    public JButton getAddNewPhoneButton() {
+        return addNewPhoneButton;
     }
 }
 

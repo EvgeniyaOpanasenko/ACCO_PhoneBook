@@ -6,6 +6,7 @@ import ua.artcode.dao.IContactDao;
 import ua.artcode.model.Contact;
 import ua.artcode.utils.FileSaver;
 import ua.artcode.view.AddContactFrameTest;
+import ua.artcode.view.JTableModel;
 import ua.artcode.view.StartFrameJTableContacts;
 
 import java.util.ArrayList;
@@ -17,7 +18,6 @@ public class ApplicationContext {
     private String path = "D:\\ACCO_PhoneBook\\src\\main\\resources\\contacts.txt";
     private FileSaver fileSaver;
     private IContactDao dao;
-    private AddContactFrameTest addContactFrame;
     private StartFrameJTableContacts startFrame;
     private ContactController controller;
     private ArrayList<Contact> contacts;
@@ -31,10 +31,11 @@ public class ApplicationContext {
     public ApplicationContext() {
         this.fileSaver = new FileSaver(path);
         this.dao = new ContactDao(fileSaver);
-        this.startFrame = new StartFrameJTableContacts();
+        this.contacts = new ArrayList<>(dao.getAllContacts());
+        this.startFrame = new StartFrameJTableContacts(contacts);
         this.controller = new ContactController(startFrame, dao);
-    }
 
+    }
 
     public ContactController getController() {
         return controller;

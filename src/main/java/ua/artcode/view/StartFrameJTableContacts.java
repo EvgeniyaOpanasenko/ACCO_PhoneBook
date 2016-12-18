@@ -1,6 +1,5 @@
 package ua.artcode.view;
 
-import ua.artcode.dao.ContactDao;
 import ua.artcode.dao.IContactDao;
 import ua.artcode.exceptions.InvalidNameSurnameException;
 import ua.artcode.model.Contact;
@@ -16,13 +15,9 @@ import java.util.ArrayList;
  * Created by Lisa on 12/12/2016.
  */
 public class StartFrameJTableContacts extends JFrame {
-
-    private ArrayList<Contact> contacts;// почему не могу создать List???
-    private JTableContactModel tableContactsModel;
-    private IContactDao dao;
-    private String path = "D:\\ACCO_PhoneBook\\src\\main\\resources\\contacts.txt";
-    private FileSaver fileReader;
-
+    // вопрос для ЖЕНИ!!
+    // private ArrayList<Contact> contacts;// почему не могу создать List в этом месте?????
+    private JTableModel tableModel;
     private JScrollPane scrollPaneTable;
     private JScrollPane scrollPaneButtons;
     private JTable jTableContacts;
@@ -36,18 +31,7 @@ public class StartFrameJTableContacts extends JFrame {
 
     private JComboBox sortType = new JComboBox(sortStrings);
 
-    public StartFrameJTableContacts() {
-        contacts = new ArrayList<>();
-        fileReader = new FileSaver(path);
-        dao = new ContactDao(fileReader);
-
-        /* contacts.add(new Contact("Eva", "Eva",
-                 "Kie", "slype", "mail",
-                 "1234567890", "cellPhone",
-                 "acco12", "OOP"));*/
-
-        contacts = dao.getAllContacts();
-
+    public StartFrameJTableContacts(ArrayList<Contact> contacts) {
         setTitle("Contacts");
         //setResizable(false);
         getContentPane().setLayout(new GridBagLayout());
@@ -55,8 +39,8 @@ public class StartFrameJTableContacts extends JFrame {
         setSize(new Dimension(600, 370));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        tableContactsModel = new JTableContactModel(contacts);
-        jTableContacts = new JTable(tableContactsModel);
+        tableModel = new JTableModel(contacts);
+        jTableContacts = new JTable(tableModel);
         scrollPaneTable = new JScrollPane(jTableContacts);
         jTableContacts.setPreferredScrollableViewportSize(new Dimension(500, 200));
         getContentPane().add(scrollPaneTable);
@@ -66,25 +50,13 @@ public class StartFrameJTableContacts extends JFrame {
 
         constraints.fill = GridBagConstraints.BOTH;
 
-        /*updateButton.addActionListener(new ActionListener() {
+       // findContactButton.addActionListener(e -> new FindContactFrame());
+       /* updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                *//*contacts.add(new Contact("Vasya", "Pupkin",
-                "Kie", "slype",
-                        "mail", "1234567890", "Acco12" ));*//*
-                tableContactsModel.fireTableDataChanged();
-            }*/
-/*
-       *//* addContactButton.addActionListener(e -> new AddContactFrameTest());
-        //addContactButton.addActionListener(e -> new AddContactFrame());
-        findContactButton.addActionListener(e -> new FindContactFrame());*//*
-        updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                *//*contacts.add(new Contact("Vasya", "Pupkin",
-                        "Kie", "slype",
-                        "mail", "1234567890", "Acco12" ));*//*
-                tableContactsModel.fireTableDataChanged();
+              JTableModel model = (JTableModel) tableModel.fireTableChanged();
+                model.fireTableDataChanged();
+               tableModel.fireTableDataChanged();
             }
         });*/
 
@@ -103,6 +75,7 @@ public class StartFrameJTableContacts extends JFrame {
         constraints.gridy = 2;
         buttonPanel.add(updateButton, constraints);
 
+
         constraints.gridx = 0;
         constraints.gridy = 3;
         buttonPanel.add(findContactButton, constraints);
@@ -117,7 +90,21 @@ public class StartFrameJTableContacts extends JFrame {
         constraints.gridy = 1;
         add(buttonPanel, constraints);
 
-        //Отображаем контейнер
+        /*updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    contacts.add(new Contact("Vasya", "Pupkin",
+                            "Kie", "skype",
+                            "mail", "1234567890",
+                            "Cell", "123", "BASE"));
+                } catch (InvalidNameSurnameException e1) {
+                    e1.printStackTrace();
+                }
+                tableModel.fireTableDataChanged();
+            }
+        });*/
+
         //setVisible(true);
     }
 
@@ -129,20 +116,12 @@ public class StartFrameJTableContacts extends JFrame {
         this.updateButton = updateButton;
     }
 
-    public ArrayList<Contact> getContacts() {
-        return contacts;
+    public JTableModel getTableModel() {
+        return tableModel;
     }
 
-    public void setContacts(ArrayList<Contact> contacts) {
-        this.contacts = contacts;
-    }
-
-    public JTableContactModel getTableContactsModel() {
-        return tableContactsModel;
-    }
-
-    public void setTableContactsModel(JTableContactModel tableContactsModel) {
-        this.tableContactsModel = tableContactsModel;
+    public void setTableModel(JTableModel tableModel) {
+        this.tableModel = tableModel;
     }
 
     public JButton getAddContactButton() {

@@ -4,20 +4,29 @@ import ua.artcode.dao.ContactDao;
 import ua.artcode.dao.IContactDao;
 import ua.artcode.model.Contact;
 
+import javax.swing.event.TableModelEvent;
 import javax.swing.table.AbstractTableModel;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.FileHandler;
 
 /**
  * Created by Lisa on 12/12/2016.
  */
-public class JTableContactModel extends AbstractTableModel {
-    private List<Contact> contacts;
+public class JTableModel extends AbstractTableModel  {
+    private ArrayList<Contact> contacts;
+    //private IContactDao dao;
 
-    public JTableContactModel(List<Contact> contacts) {
+    public JTableModel(ArrayList<Contact> contacts) {
         super();
         this.contacts = contacts;
-
+        //this.dao = dao;
     }
+
+   /* public void refresh() {
+        contacts = new ArrayList<>(dao.getAllContacts());
+        fireTableDataChanged();
+    }*/
 
     @Override
     public int getRowCount() {
@@ -29,10 +38,10 @@ public class JTableContactModel extends AbstractTableModel {
         return 9;
     }
 
-    //setting data to ech cell
+    //setting data to each cell
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-       /* Contact entity = null;
+        /*Contact entity = null;
         entity = contacts.get(rowIndex);*/
 
         switch (columnIndex) {
@@ -95,4 +104,5 @@ public class JTableContactModel extends AbstractTableModel {
         }
         return res;
     }
+
 }

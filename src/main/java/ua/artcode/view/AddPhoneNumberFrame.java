@@ -2,6 +2,8 @@ package ua.artcode.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Lisa on 12/9/2016.
@@ -22,8 +24,18 @@ public class AddPhoneNumberFrame extends JFrame {
 
     private JComboBox phone_type = new JComboBox(phoneStrings);
 
-    public AddPhoneNumberFrame() {
+    private JTextField result_phone_type = new JTextField(15);
 
+    public AddPhoneNumberFrame() {
+        phone_type.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JComboBox combox = (JComboBox) e.getSource();
+                String choice = (String) combox.getSelectedItem();
+                result_phone_type.setText(String.valueOf(choice));
+
+            }
+        });
         setTitle("Add Phone");
         setResizable(false);
         setLayout(new GridBagLayout());
@@ -40,9 +52,9 @@ public class AddPhoneNumberFrame extends JFrame {
         constraints.gridy = 9;
         add(phoneLabel, constraints);
         constraints.gridx = 1;
-        add(phone, constraints );
+        add(phone, constraints);
         constraints.gridx = 2;
-        add(phone_type, constraints );
+        add(phone_type, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 11;
@@ -68,5 +80,9 @@ public class AddPhoneNumberFrame extends JFrame {
 
     public JButton getCancelButton() {
         return cancelButton;
+    }
+
+    public JTextField getResult_phone_type() {
+        return result_phone_type;
     }
 }
