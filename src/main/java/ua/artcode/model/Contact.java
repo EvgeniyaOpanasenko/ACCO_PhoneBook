@@ -2,10 +2,7 @@ package ua.artcode.model;
 
 import ua.artcode.exceptions.InvalidNameSurnameException;
 
-import java.util.Date;
-
-import static ua.artcode.utils.ValidationUtils.validateName;
-import static ua.artcode.utils.ValidationUtils.validateSurname;
+import static ua.artcode.utils.ValidationUtils.validateNameSurname;
 
 /**
  * Created by Lisa on 12/12/2016.
@@ -17,31 +14,28 @@ public class Contact {
     private String skype;
     private String mail;
     private String phone;
-    private String phone_type;
+    private String phoneType;
     private String group;
-    private String group_type;
-   /* private Phone phone;
-    private Group group;
-    private Date dateOfCreation;
-    private Date dateOfModication;*/
+    private String groupType;
 
 
     public Contact(String name, String surname,
                    String address, String skype, String mail,
-                   String phone, String phone_type, String group,
-                   String group_type ) throws InvalidNameSurnameException {
+                   String phone, String phoneType, String group,
+                   String groupType ) throws InvalidNameSurnameException {
         this.name = name;
+        validateNameSurname(name);
         this.surname = surname;
+        validateNameSurname(surname);
         this.address = address;
         this.skype = skype;
         this.mail = mail;
         this.phone = phone;
-        this.phone_type = phone_type;
+        this.phoneType = phoneType;
         this.group = group;
-        this.group_type = group_type;
+        this.groupType = groupType;
 
-        validateName(name);
-        validateSurname(surname);
+//        TODO add another validations
     }
 
     public String getName() {
@@ -72,11 +66,32 @@ public class Contact {
         return group;
     }
 
-    public String getPhone_type() {
-        return phone_type;
+    public String getPhoneType() {
+        return phoneType;
     }
 
-    public String getGroup_type() {
-        return group_type;
+    public String getGroupType() {
+        return groupType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Contact contact = (Contact) o;
+
+        if (!name.equals(contact.name)) return false;
+        if (!surname.equals(contact.surname)) return false;
+        return phone.equals(contact.phone);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + surname.hashCode();
+        result = 31 * result + phone.hashCode();
+        return result;
     }
 }

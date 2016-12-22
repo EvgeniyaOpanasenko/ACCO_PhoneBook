@@ -6,9 +6,8 @@
     "skype": "skype",
     "mail": "mail",
     "phone": "1234",
-    "phone_type": "WORK_PHONE",
     "group": "asd12",
-    "group_type": "PROF"
+    "groupType": "PROF"
   },
   {
     "name": "Hello",
@@ -17,9 +16,8 @@
     "skype": "xxxxxxxx",
     "mail": "xxxxxxxxxxx",
     "phone": "xxxxxxxxx",
-    "phone_type": "WORK_PHONE",
     "group": "xxxxxxxxx",
-    "group_type": "OOP"
+    "groupType": "OOP"
   },
   {
     "name": "Eva",
@@ -28,9 +26,8 @@
     "skype": "Eva",
     "mail": "Eva",
     "phone": "222222",
-    "phone_type": "WORK_PHONE",
     "group": "Ac",
-    "group_type": "OOP"
+    "groupType": "OOP"
   },
   {
     "name": "Eva",
@@ -39,9 +36,8 @@
     "skype": "Eva",
     "mail": "Eva",
     "phone": "2",
-    "phone_type": "WORK_PHONE",
     "group": "Eva",
-    "group_type": "OOP"
+    "groupType": "OOP"
   },
   {
     "name": "Eva",
@@ -50,9 +46,8 @@
     "skype": "",
     "mail": "",
     "phone": "",
-    "phone_type": "",
     "group": "",
-    "group_type": ""
+    "groupType": ""
   },
   {
     "name": "Eva",
@@ -61,9 +56,8 @@
     "skype": "evaSkype",
     "mail": "eva@mail",
     "phone": "12445",
-    "phone_type": "WORK_PHONE",
     "group": "artc",
-    "group_type": "OOP"
+    "groupType": "OOP"
   },
   {
     "name": "Eva",
@@ -72,9 +66,8 @@
     "skype": "Eva",
     "mail": "Eva",
     "phone": "4444444",
-    "phone_type": "WORK_PHONE",
     "group": "Eva",
-    "group_type": "OOP"
+    "groupType": "OOP"
   },
   {
     "name": "Eva",
@@ -83,9 +76,8 @@
     "skype": "Eva",
     "mail": "Eva",
     "phone": "Eva",
-    "phone_type": "HOME_PHONE",
     "group": "Eva",
-    "group_type": "OOP"
+    "groupType": "OOP"
   },
   {
     "name": "Eva",
@@ -94,8 +86,116 @@
     "skype": "Eva",
     "mail": "Eva",
     "phone": "Eva",
-    "phone_type": "",
     "group": "Eva",
-    "group_type": ""
+    "groupType": ""
+  },
+  {
+    "name": "Yevgen",
+    "surname": "Vorobiei",
+    "address": "Kiev",
+    "skype": "gotobec31",
+    "mail": "gorobec3@bigmir.net",
+    "phone": "0501236598",
+    "group": "1",
+    "groupType": "PROF"
+  },
+  {
+    "name": "AAA",
+    "surname": "CCC",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "DDD",
+    "surname": "DDD",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "SSS",
+    "surname": "SSS",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "FFF",
+    "surname": "FFF",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "Aadada",
+    "surname": "Asadad",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "SSss",
+    "surname": "Sdsfd",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "SDSDS",
+    "surname": "SDSDSD",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "Vbvvv",
+    "surname": "Dfgf",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
+  },
+  {
+    "name": "VBd",
+    "surname": "Fgg",
+    "address": "",
+    "skype": "",
+    "mail": "",
+    "phone": "",
+    "phoneType": "\u003cmake choice\u003e",
+    "group": "",
+    "groupType": "\u003cmake choice\u003e"
   }
 ]

@@ -1,19 +1,19 @@
 package ua.artcode.model;
 
 
-import ua.artcode.enums.Group_type;
+import ua.artcode.enums.GroupType;
 
 /**
  * Created by Lisa on 12/4/2016.
  */
 public class Group {
-    private String group_number;
-    private Group_type group_type;
+    private String groupNumber;
+    private GroupType groupType;
 
-    public Group(String group_number, Group_type group_type) {
+    public Group(String groupNumber, GroupType groupType) {
 
-        this.group_number = group_number;
-        this.group_type = group_type;
+        this.groupNumber = groupNumber;
+        this.groupType = groupType;
     }
 
 }

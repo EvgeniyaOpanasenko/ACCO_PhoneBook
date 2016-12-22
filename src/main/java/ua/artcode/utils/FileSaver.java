@@ -25,33 +25,23 @@ public class FileSaver {
     public ArrayList<Contact> read() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
-            ArrayList<Contact> users = gson.fromJson(br, new TypeToken<List<Contact>>() {
-            }.getType());
-
-            if(users == null){
+            ArrayList<Contact> users = gson.fromJson(br, new TypeToken<List<Contact>>(){}.getType());
+            if (users == null) {
                 users = new ArrayList<>();
-
             }
             return users;
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         return null;
-
     }
 
     public void save(ArrayList<Contact> users) {
-
         String json = gson.toJson(users);
         try (FileWriter writer = new FileWriter(path)) {
             writer.write(json);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 }

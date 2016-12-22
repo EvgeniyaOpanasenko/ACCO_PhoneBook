@@ -1,14 +1,9 @@
 package ua.artcode.view;
 
-import ua.artcode.dao.IContactDao;
-import ua.artcode.exceptions.InvalidNameSurnameException;
 import ua.artcode.model.Contact;
-import ua.artcode.utils.FileSaver;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -16,33 +11,31 @@ import java.util.ArrayList;
  */
 public class StartFrameJTableContacts extends JFrame {
     // вопрос для ЖЕНИ!!
-    // private ArrayList<Contact> contacts;// почему не могу создать List в этом месте?????
+//     private ArrayList<Contact> contacts;// почему не могу создать List в этом месте?????
+//    Потому что JTableModel не принемает List он заточен под ArrayList
     private JTableModel tableModel;
     private JScrollPane scrollPaneTable;
-    private JScrollPane scrollPaneButtons;
     private JTable jTableContacts;
 
-    private JButton addContactButton = new JButton("add new contact");
-    private JButton findContactButton = new JButton("find contact");
-    private JButton sortButton = new JButton("sort");
-    private JButton updateButton = new JButton("update");
-    //private JButton cancelButton = new JButton("cancel");
-    String[] sortStrings = {"By Name", "By Surname", "By Phone"};
+    private JButton addContactButton = new JButton("Add new contact");
+    private JButton findContactButton = new JButton("Find contact");
+    private JButton sortButton = new JButton("Sort");
+    private JButton updateButton = new JButton("Update");
+    private String[] sortStrings = {"By Name", "By Surname", "By Phone"};
 
-    private JComboBox sortType = new JComboBox(sortStrings);
+    private JComboBox<String> sortType = new JComboBox<>(sortStrings);
 
     public StartFrameJTableContacts(ArrayList<Contact> contacts) {
         setTitle("Contacts");
-        //setResizable(false);
+        setResizable(false);
         getContentPane().setLayout(new GridBagLayout());
-        //setLocationRelativeTo(null);
-        setSize(new Dimension(600, 370));
+        setSize(new Dimension(900, 450));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         tableModel = new JTableModel(contacts);
         jTableContacts = new JTable(tableModel);
+        jTableContacts.setPreferredScrollableViewportSize(new Dimension(850, 300));
         scrollPaneTable = new JScrollPane(jTableContacts);
-        jTableContacts.setPreferredScrollableViewportSize(new Dimension(500, 200));
         getContentPane().add(scrollPaneTable);
 
         GridBagConstraints constraints = new GridBagConstraints();
@@ -50,17 +43,7 @@ public class StartFrameJTableContacts extends JFrame {
 
         constraints.fill = GridBagConstraints.BOTH;
 
-       // findContactButton.addActionListener(e -> new FindContactFrame());
-       /* updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-              JTableModel model = (JTableModel) tableModel.fireTableChanged();
-                model.fireTableDataChanged();
-               tableModel.fireTableDataChanged();
-            }
-        });*/
-
-        sortType = new JComboBox(sortStrings);
+        sortType = new JComboBox<>(sortStrings);
 
         JPanel buttonPanel = new JPanel();
         constraints.gridx = 0;
@@ -89,78 +72,15 @@ public class StartFrameJTableContacts extends JFrame {
         constraints.gridx = 0;
         constraints.gridy = 1;
         add(buttonPanel, constraints);
-
-        /*updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    contacts.add(new Contact("Vasya", "Pupkin",
-                            "Kie", "skype",
-                            "mail", "1234567890",
-                            "Cell", "123", "BASE"));
-                } catch (InvalidNameSurnameException e1) {
-                    e1.printStackTrace();
-                }
-                tableModel.fireTableDataChanged();
-            }
-        });*/
-
-        //setVisible(true);
+        pack();
     }
 
     public JButton getUpdateButton() {
         return updateButton;
     }
 
-    public void setUpdateButton(JButton updateButton) {
-        this.updateButton = updateButton;
-    }
-
-    public JTableModel getTableModel() {
-        return tableModel;
-    }
-
-    public void setTableModel(JTableModel tableModel) {
-        this.tableModel = tableModel;
-    }
-
     public JButton getAddContactButton() {
         return addContactButton;
     }
 
-    public void setAddContactButton(JButton addContactButton) {
-        this.addContactButton = addContactButton;
-    }
-
-    public JButton getFindContactButton() {
-        return findContactButton;
-    }
-
-    public void setFindContactButton(JButton findContactButton) {
-        this.findContactButton = findContactButton;
-    }
-
-    public JButton getSortButton() {
-        return sortButton;
-    }
-
-    public void setSortButton(JButton sortButton) {
-        this.sortButton = sortButton;
-    }
-
-    public String[] getSortStrings() {
-        return sortStrings;
-    }
-
-    public void setSortStrings(String[] sortStrings) {
-        this.sortStrings = sortStrings;
-    }
-
-    public JComboBox getSortType() {
-        return sortType;
-    }
-
-    public void setSortType(JComboBox sortType) {
-        this.sortType = sortType;
-    }
 }
