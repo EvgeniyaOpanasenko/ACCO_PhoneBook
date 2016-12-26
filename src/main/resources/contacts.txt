@@ -1,101 +1,22 @@
 [
   {
-    "name": "Eva",
-    "surname": "Eva",
+    "name": "Yevhenija",
+    "surname": "Opanasenko",
     "address": "Kiev",
-    "skype": "skype",
+    "skype": "eva",
     "mail": "mail",
-    "phone": "1234",
-    "phone_type": "WORK_PHONE",
-    "group": "asd12",
-    "group_type": "PROF"
+    "phone": "0968388186",
+    "group": "16",
+    "groupType": "OOP"
   },
   {
-    "name": "Hello",
-    "surname": "World",
-    "address": "xxxxxxx",
-    "skype": "xxxxxxxx",
-    "mail": "xxxxxxxxxxx",
-    "phone": "xxxxxxxxx",
-    "phone_type": "WORK_PHONE",
-    "group": "xxxxxxxxx",
-    "group_type": "OOP"
-  },
-  {
-    "name": "Eva",
-    "surname": "Eva",
-    "address": "Eva",
-    "skype": "Eva",
-    "mail": "Eva",
-    "phone": "222222",
-    "phone_type": "WORK_PHONE",
-    "group": "Ac",
-    "group_type": "OOP"
-  },
-  {
-    "name": "Eva",
-    "surname": "Eva",
-    "address": "Eva",
-    "skype": "Eva",
-    "mail": "Eva",
-    "phone": "2",
-    "phone_type": "WORK_PHONE",
-    "group": "Eva",
-    "group_type": "OOP"
-  },
-  {
-    "name": "Eva",
-    "surname": "Evs",
-    "address": "",
-    "skype": "",
-    "mail": "",
-    "phone": "",
-    "phone_type": "",
-    "group": "",
-    "group_type": ""
-  },
-  {
-    "name": "Eva",
-    "surname": "Longoriya",
-    "address": "Lvov",
-    "skype": "evaSkype",
-    "mail": "eva@mail",
-    "phone": "12445",
-    "phone_type": "WORK_PHONE",
-    "group": "artc",
-    "group_type": "OOP"
-  },
-  {
-    "name": "Eva",
-    "surname": "Eva",
-    "address": "Eva",
-    "skype": "Eva",
-    "mail": "Eva",
-    "phone": "4444444",
-    "phone_type": "WORK_PHONE",
-    "group": "Eva",
-    "group_type": "OOP"
-  },
-  {
-    "name": "Eva",
-    "surname": "Eva",
-    "address": "Eva",
-    "skype": "Eva",
-    "mail": "Eva",
-    "phone": "Eva",
-    "phone_type": "HOME_PHONE",
-    "group": "Eva",
-    "group_type": "OOP"
-  },
-  {
-    "name": "Eva",
-    "surname": "Eva",
-    "address": "Eva",
-    "skype": "Eva",
-    "mail": "Eva",
-    "phone": "Eva",
-    "phone_type": "",
-    "group": "Eva",
-    "group_type": ""
+    "name": "Yevgen",
+    "surname": "Vorobiei",
+    "address": "Kiev",
+    "skype": "gorobec31",
+    "mail": "gorobec3@bigmir.net",
+    "phone": "0632555855",
+    "group": "1",
+    "groupType": "PROF"
   }
 ]

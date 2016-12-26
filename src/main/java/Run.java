@@ -6,10 +6,7 @@ import ua.artcode.view.StartFrameJTableContacts;
  */
 public class Run {
     public static void main(String[] args) {
-        //StartFrameJTableContacts frame = new StartFrameJTableContacts();
-       // frame.setVisible(true);
-
-        ApplicationContext context = new ApplicationContext();
+        ApplicationContext context = ApplicationContext.getInstance();
         context.getController().run();
     }
 }

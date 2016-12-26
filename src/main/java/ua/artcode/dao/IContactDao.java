@@ -10,4 +10,7 @@ import java.util.ArrayList;
 public interface IContactDao {
     boolean saveContact(Contact contact);
     ArrayList<Contact> getAllContacts();
+    boolean deleteContact(Contact contact);
+    Contact findContact(Contact contact);
+    boolean updateContact(Contact contact);
 }
