@@ -22,7 +22,7 @@ public class Contact {
     public Contact(String name, String surname,
                    String address, String skype, String mail,
                    String phone, String phoneType, String group,
-                   String groupType ) throws InvalidNameSurnameException {
+                   String groupType) throws InvalidNameSurnameException {
         this.name = name;
         validateNameSurname(name);
         this.surname = surname;

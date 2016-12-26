@@ -10,15 +10,14 @@ import java.util.ArrayList;
  */
 public class JTableModel extends AbstractTableModel  {
     private ArrayList<Contact> contacts;
-    //private IContactDao dao;
 
     public JTableModel(ArrayList<Contact> contacts) {
         super();
         this.contacts = contacts;
-        //this.dao = dao;
     }
 
-   /* public void refresh() {
+   /*   TODO
+   public void refresh() {
         contacts = new ArrayList<>(dao.getAllContacts());
         fireTableDataChanged();
     }*/
@@ -36,8 +35,6 @@ public class JTableModel extends AbstractTableModel  {
     //setting data to each cell
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        /*Contact entity = null;
-        entity = contacts.get(rowIndex);*/
 
         switch (columnIndex) {
             case 0:

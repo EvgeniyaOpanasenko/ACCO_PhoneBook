@@ -18,10 +18,8 @@ public class StartFrameJTableContacts extends JFrame {
     private JTable jTableContacts;
 
     private JButton addContactButton = new JButton("Add new contact");
-    private JButton findContactButton = new JButton("Find contact");
     private JButton sortButton = new JButton("Sort");
-    private JButton updateButton = new JButton("Update");
-    private String[] sortStrings = {"By Name", "By Surname", "By Phone"};
+    private String[] sortStrings = {"By Name", "By Surname", "By Group"};
 
     private JComboBox<String> sortType = new JComboBox<>(sortStrings);
 
@@ -50,18 +48,6 @@ public class StartFrameJTableContacts extends JFrame {
         constraints.gridy = 0;
         buttonPanel.add(addContactButton, constraints);
 
-        constraints.gridx = 0;
-        constraints.gridy = 1;
-        buttonPanel.add(findContactButton, constraints);
-
-        constraints.gridx = 0;
-        constraints.gridy = 2;
-        buttonPanel.add(updateButton, constraints);
-
-
-        constraints.gridx = 0;
-        constraints.gridy = 3;
-        buttonPanel.add(findContactButton, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 3;
@@ -75,12 +61,15 @@ public class StartFrameJTableContacts extends JFrame {
         pack();
     }
 
-    public JButton getUpdateButton() {
-        return updateButton;
-    }
-
     public JButton getAddContactButton() {
         return addContactButton;
     }
 
+    public JButton getSortButton() {
+        return sortButton;
+    }
+
+    public JComboBox<String> getSortType() {
+        return sortType;
+    }
 }

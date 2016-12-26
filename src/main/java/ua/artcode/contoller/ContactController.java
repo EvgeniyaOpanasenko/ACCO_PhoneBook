@@ -2,25 +2,22 @@ package ua.artcode.contoller;
 
 import ua.artcode.dao.IContactDao;
 import ua.artcode.model.Contact;
-import ua.artcode.view.*;
+import ua.artcode.view.StartFrameJTableContacts;
 
 import java.util.ArrayList;
 
 public class ContactController {
     private StartFrameJTableContacts startFrame;
-    private ArrayList<Contact> contacts;
 
     public ContactController(IContactDao dao) {
-        this.contacts = new ArrayList<>(dao.getAllContacts());
+        ArrayList<Contact> contacts = new ArrayList<>(dao.getAllContacts());
         this.startFrame = new StartFrameJTableContacts(contacts);
-
-        startFrame.getUpdateButton().addActionListener(e -> {
-//          TODO
-        });
 
         startFrame.getAddContactButton().addActionListener(e -> {
            new AddContactController(dao, startFrame);
         });
+
+        startFrame.getSortButton().addActionListener(e -> new SortController(dao, startFrame));
     }
 
     public void run() {
